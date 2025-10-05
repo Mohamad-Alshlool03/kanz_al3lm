@@ -1,91 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>المهارات الرقمية | أكاديمية كنز العلم</title>
-<link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="index.html" class="logo"><img src="assets/cover/kanz.jpg" alt="أكاديمية كنز العلم"><strong>أكاديمية كنز العلم</strong></a>
-    <div class="links">
-      <a href="courses.html">الدورات</a>
-      <a href="teacher.html">عن المدرّس</a>
-      <a href="contact.html" class="cta">تواصل</a>
-    </div>
-  </div>
-</nav>
-
-<section class="hero" style="--hero:url('assets/cover/digital_skills.jpg')">
-  <div class="container">
-    <h1>المهارات الرقمية</h1>
-    <p class="muted">الوحدة الأولى مجانية — افتح الوحدات التالية باستخدام الكود.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="grid-2">
-      <div>
-        <div class="tabs">
-          <button class="tab active" data-panel="videos" onclick="selectTab('videos')">🎥 الفيديوهات</button>
-          <button class="tab" data-panel="slides" onclick="selectTab('slides')">📚 السلايدات</button>
-          <button class="tab" data-panel="qa" onclick="selectTab('qa')">📝 بنوك الأسئلة</button>
-          <button class="tab" data-panel="ann" onclick="selectTab('ann')">📢 الإعلانات</button>
-        </div>
-
-        <div id="videos" class="panel active">
-          <div class="list">
-            <div class="row">
-              <div class="left"><span class="tag">الوحدة 1</span> أساسيات الحاسوب</div>
-              <div class="right"><a class="btn primary" href="player-digital-u1-1.html" title="مشاهدة الوحدة 1">مشاهدة</a></div>
-            </div>
-            <div class="row" data-lock="digital-u2">
-              <div class="left"><span class="tag">الوحدة 2</span> الإنترنت والأمان</div>
-              <div class="right">
-                <a class="btn" href="player-digital-u2-1.html" data-locked-link title="مشاهدة الوحدة 2">مشاهدة</a>
-                <button class="btn" onclick="unlock('digital-u2')">إدخال الكود</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="slides" class="panel">
-          <div class="list">
-            <div class="row"><div class="left">سلايدات الوحدة 1</div><div class="right"><a class="btn" href="#" onclick="showPdf('assets/slides/digital/digital-u1-1.pdf')">عرض</a></div></div>
-            <div class="row" data-lock="digital-u2"><div class="left">سلايدات الوحدة 2</div><div class="right"><a class="btn" href="#" data-locked-link onclick="return false">عرض</a><button class="btn" onclick="unlock('digital-u2')">إدخال الكود</button></div></div>
-          </div>
-        </div>
-
-        <div id="qa" class="panel"><p>أسئلة وتمارين عملية.</p></div>
-        <div id="ann" class="panel"><div class="list"><div class="row"><div class="left">📢 سيتم إضافة تمارين عملية الأسبوع القادم</div><div class="right"><span class="tag">قريبًا</span></div></div></div></div>
-      </div>
-
-      <aside>
-        <div class="card" style="padding:16px">
-          <h3>معلومات المادة</h3>
-          <table class="table">
-            <tr><th>المعلّم</th><td>الأستاذ محمد أحمد الشلول</td></tr>
-            <tr><th>الهاتف</th><td dir="ltr">+962 7 9024 5645</td></tr>
-            <tr><th>قناة يوتيوب</th><td><a href="https://www.youtube.com/@TeacherMohammadahmadalshloul" target="_blank" rel="noopener">اضغط هنا</a></td></tr>
-          </table>
-          <div class="alert">لفتح الوحدة 2 وما بعدها اطلب كود من <a href="contact.html">التواصل</a>. الكود الحالي: <code>DIG-2025</code></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container grid-2">
-    <div>
-      <img src="assets/cover/kanz.jpg" style="height:30px" alt="logo"><br>
-      <small>© 2025 أكاديمية كنز العلم</small>
-      <div class="credit">تم التطوير من قبل <strong>محمد خالد الشلول</strong> <a class="btn primary wa" href="https://wa.me/962790986908" target="_blank" rel="noopener">واتساب</a> <span style="margin-inline-start:8px">— <strong dir="ltr">0790986908</strong></span></div>
-    </div>
-    <div style="text-align:end"><small>فيسبوك: <a href="https://web.facebook.com/asalaltamuz2019" target="_blank" rel="noopener">الصفحة الرسمية — أسال التمّوز</a> • <a href="https://web.facebook.com/profile.php?id=100070253529142" target="_blank" rel="noopener">الصفحة الثانية — الأستاذ محمد الشلول</a></small></div>
-  </div>
-</footer>
-<script src="assets/app.js"></script>
-</body></html>
