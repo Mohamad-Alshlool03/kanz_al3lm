@@ -1,0 +1,99 @@
+<!doctype html><html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الثقافة المالية — الوحدة 2</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .player-wrap{display:grid;grid-template-columns:2fr 1fr;gap:18px}
+  @media(max-width:992px){.player-wrap{grid-template-columns:1fr}}
+  .playlist{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .playlist h3{margin:0;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .playlist ul{list-style:none;margin:0;padding:0;max-height:520px;overflow:auto}
+  .playlist li{padding:12px 14px;border-bottom:1px dashed var(--line);cursor:pointer}
+  .playlist li.active{background:rgba(77,163,255,.12)}
+  .video-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px}
+  .video-title{margin:6px 0 10px}
+  .ratio{position:relative;padding-top:56.25%}
+  .ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px}
+</style>
+</head>
+<body>
+<script>
+  if(!localStorage.getItem('unlock:financial-u2')){
+    alert('هذه الوحدة تحتاج كود. ارجع للمادة وأدخل الكود.');
+    location.href='course-financial.html#videos';
+  }
+</script>
+<nav class="nav"><div class="container nav-inner">
+  <a href="courses.html" class="logo"><img src="assets/kanz.jpg" alt=""><strong>أكاديمية كنز العلم</strong></a>
+  <div class="links"><a href="course-financial.html">رجوع للمادة</a><a href="contact.html" class="cta">تواصل</a></div>
+</div></nav>
+
+<section class="section">
+  <div class="container player-wrap">
+    <div>
+      <h1>الثقافة المالية — الوحدة 2</h1>
+      <h3 id="videoTitle" class="video-title muted">جارٍ التحميل…</h3>
+      <div class="video-box">
+        <div class="ratio"><iframe id="ytFrame" title="مشغّل الفيديو" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
+    <aside class="playlist">
+      <h3>دروس الوحدة 2</h3>
+      <ul id="playlist"></ul>
+      <div style="padding:12px 14px;border-top:1px solid var(--line)">
+        <strong>السلايدات:</strong>
+        <a class="btn" href="#" onclick="showPdf('assets/slides/financial/financial-u2-1.pdf')">عرض PDF</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="footer"><div class="container grid-2">
+  <div><img src="assets/kanz.jpg" style="height:30px" alt=""><br><small>© 2025 أكاديمية كنز العلم</small></div>
+  <div style="text-align:end"><small>الدعم: <strong dir="ltr">+962 7 9024 5645</strong></small></div>
+</div></footer>
+
+<script src="assets/app.js"></script>
+<script>
+  const lessons = [
+    "https://youtu.be/WWZlRGQME_U?si=i9agHomyMmv4btR4",
+    "https://youtu.be/7yUr89QR0cE?si=JoOIkgdUSKko3Z1l",
+    "https://youtu.be/e07Jtz9d590?si=AEmTlNUYTahbFqwy",
+    "https://youtu.be/HMr1PMKNhsE?si=t44K-qYg-v3jT-8C"
+  ];
+
+  const playlistEl = document.getElementById('playlist');
+  const frame = document.getElementById('ytFrame');
+  const titleEl = document.getElementById('videoTitle');
+
+  function ytId(url){ const m = url.match(/(?:youtu\.be\/|v=)([A-Za-z0-9_-]{6,})/); return m? m[1] : url; }
+  async function getTitle(url){
+    try{ const r=await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`);
+      if(r.ok){const j=await r.json(); return j.title;}
+    }catch{}
+    try{ const r2=await fetch(`https://noembed.com/embed?url=${encodeURIComponent(url)}`);
+      if(r2.ok){const j2=await r2.json(); return j2.title || url;}
+    }catch{}
+    return url;
+  }
+  function play(url, li){
+    const id=ytId(url);
+    frame.src=`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`;
+    document.querySelectorAll('#playlist li').forEach(x=>x.classList.remove('active'));
+    if(li) li.classList.add('active');
+    getTitle(url).then(t=> titleEl.textContent=t);
+  }
+  (async ()=>{
+    for(const url of lessons){
+      const li=document.createElement('li');
+      li.textContent='...';
+      li.onclick=()=> play(url, li);
+      playlistEl.appendChild(li);
+      li.textContent=await getTitle(url);
+    }
+    if(lessons.length) play(lessons[0], playlistEl.querySelector('li'));
+  })();
+</script>
+</body></html>
