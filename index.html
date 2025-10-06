@@ -1,0 +1,237 @@
+﻿<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كنز العلم | منصة تعليمية</title>
+  <meta name="description" content="منصة كنز العلم توفر كل ما يحتاجه الطالب في موقع واحد.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/cover/kanz.jpg">
+  <style>
+    /* ضبطات هذه الصفحة */
+    .hero .title{font-size:28px;line-height:1.35}
+    @media(max-width:600px){.hero .title{font-size:22px}}
+    /* أزرار المراحل */
+    .stage-switch{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+    .stage-btn{padding:9px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}
+    .stage-btn.active{background:linear-gradient(180deg, var(--gold, #d4af37), var(--gold-2, #b68d1a));border:none;color:#000}
+    .stage-panel{display:none}.stage-panel.active{display:block}
+
+    /* ألوان أزرار السوشيال */
+    .btn.fb{background:#1877F2;color:#fff;border:none}
+    .btn.yt{background:#FF0000;color:#fff;border:none}
+    .btn.wa{background:#25D366;color:#000;border:none}
+    /* زر اللوكيشن */
+    .btn.loc{background:linear-gradient(180deg, var(--gold, #d4af37), var(--gold-2, #b68d1a));color:#000;border:none}
+
+    /* قوائم منسدلة في الهيدر */
+    .dropdown{position:relative}
+    .dropbtn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+    .dropmenu{position:absolute;inset-inline-start:0;top:110%;background:#fff;border:1px solid var(--line);border-radius:12px;min-width:220px;padding:8px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+    .dropdown:hover .dropmenu{display:block}
+    .dropmenu a{display:block;padding:8px;border-radius:8px;color:#0c1324}
+    .dropmenu a:hover{background:#f2f5ff}
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <!-- START :: Unified Header v2 -->
+<!-- START :: Unified Header v2 -->
+<!-- START :: Header (clean) -->
+<header class="nav gold">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" title="كنز العلم">
+      <img src="assets/cover/kanz.jpg" alt="شعار كنز العلم" loading="lazy">
+      <div class="brand">
+        <strong>كنز العلم</strong>
+        <small>منصة تعليمية لكل المراحل</small>
+      </div>
+    </a>
+
+    <nav class="links">
+      <!-- البرامج -->
+      <div class="dropdown">
+        <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">البرامج</button>
+        <div class="dropmenu" role="menu">
+          <a href="courses.html#basic"      role="menuitem">المرحلة الأساسية</a>
+          <a href="courses.html#secondary"  role="menuitem">المرحلة الثانوية</a>
+          <a href="courses.html#university" role="menuitem">المرحلة الجامعية</a>
+        </div>
+      </div>
+
+      <!-- المعلمون (نقلنا ملخصات + أوراق عمل هنا) -->
+      <div class="dropdown">
+        <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">المعلمون</button>
+        <div class="dropmenu" role="menu">
+          <a href="teacher.html"    role="menuitem">قائمة المعلمين</a>
+          <a href="summaries.html"  role="menuitem">ملخصات</a>
+          <a href="worksheets.html" role="menuitem">أوراق عمل</a>
+          <a href="dossiers.html"   role="menuitem">دوسيات</a>
+        </div>
+      </div>
+
+      <!-- المحتوى (أبقينا: امتحانات سابقة + أسئلة مقترحة + اختبارات إلكترونية) -->
+      <div class="dropdown">
+        <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">المحتوى</button>
+        <div class="dropmenu" role="menu">
+          <a href="past-exams.html"   role="menuitem">امتحانات سابقة</a>
+          <a href="suggestions.html"  role="menuitem">أسئلة مقترحة</a>
+          <a href="e-exams.html"      role="menuitem">اختبارات إلكترونية</a>
+        </div>
+      </div>
+
+      <a href="news.html">أخبار</a>
+      <a href="contact.html" class="cta">معلومات التواصل</a>
+    </nav>
+  </div>
+</header>
+<!-- END :: Header -->
+<!-- END :: Unified Header v2 -->
+<!-- END :: Unified Header v2 -->
+
+  <!-- الغلاف -->
+  <section class="hero">
+    <div class="container" style="align-items:center;padding:22px 0">
+      <div>
+        <h1 class="title">منصة كنز العلم توفر كل ما يحتاجه الطالب في موقع واحد</h1>
+        <p class="subtitle">المرحلة الأساسية • الثانوية • الجامعية</p>
+      </div>
+      <div class="hero-art card lift" style="height:180px;background:url('assets/cover/kanz.jpg') center/cover no-repeat"></div>
+    </div>
+  </section>
+
+  <!-- البرامج (تظهر مباشرة) -->
+  <section class="section">
+    <div class="container">
+
+      <!-- أزرار المراحل (الافتراضي: الثانوية) -->
+      <div class="stage-switch">
+        <button class="stage-btn"        data-target="stage-basic"     type="button">المرحلة الأساسية</button>
+        <button class="stage-btn active" data-target="stage-secondary" type="button">المرحلة الثانوية</button>
+        <button class="stage-btn"        data-target="stage-university" type="button">المرحلة الجامعية</button>
+      </div>
+
+      <!-- المرحلة الأساسية -->
+      <div id="stage-basic" class="stage-panel">
+        <div class="card"><div class="body">
+          <div class="title">محتوى المرحلة الأساسية</div>
+          <div class="meta">سيتم إضافة مواد وأسئلة قريبًا.</div>
+        </div></div>
+      </div>
+
+      <!-- المرحلة الثانوية (متوفر الآن) -->
+      <div id="stage-secondary" class="stage-panel active">
+        <h2 class="title" style="margin:8px 0">مواد المرحلة الثانوية</h2>
+        <div class="card-grid">
+          <!-- المهارات الرقمية -->
+          <div class="card lift">
+            <div class="thumb" style="background-image:url('assets/cover/digital_skills.jpg')"></div>
+            <div class="body">
+              <div class="title">المهارات الرقمية</div>
+              <div class="meta">وحدتان — فيديو + شرائح PDF + بنك أسئلة</div>
+              <div style="margin-top:10px">
+                <a class="btn primary" href="course-digital.html">تفاصيل المادة</a>
+              </div>
+            </div>
+          </div>
+          <!-- الثقافة المالية -->
+          <div class="card lift">
+            <div class="thumb" style="background-image:url('assets/cover/malia.jpg')"></div>
+            <div class="body">
+              <div class="title">الثقافة المالية</div>
+              <div class="meta">وحدتان — فيديو + شرائح PDF + بنك أسئلة</div>
+              <div style="margin-top:10px">
+                <a class="btn primary" href="course-financial.html">تفاصيل المادة</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- المرحلة الجامعية -->
+      <div id="stage-university" class="stage-panel">
+        <div class="card"><div class="body">
+          <div class="title">محتوى المرحلة الجامعية</div>
+          <div class="meta">قريبًا — مقررات مختارة.</div>
+        </div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <!-- START :: Unified Footer v2 -->
+<!-- START :: Unified Footer v2 -->
+<footer class="footer">
+  <div class="container footgrid">
+    <div>
+      <div class="fbrand">
+        <img src="assets/cover/kanz.jpg" alt="شعار كنز" loading="lazy">
+        <div>
+          <strong>كنز العلم</strong>
+          <small>المنصة الأشمل لجميع المراحل الدراسية.</small>
+        </div>
+      </div>
+      <div class="social" style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn fb" href="https://web.facebook.com/asalaltamuz2019" target="_blank" rel="noopener">Facebook 1</a>
+        <a class="btn fb" href="https://web.facebook.com/profile.php?id=100070253529142" target="_blank" rel="noopener">Facebook 2</a>
+        <a class="btn yt" href="https://www.youtube.com/@TeacherMohammadahmadalshloul" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn wa" href="https://wa.me/962790245645" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div>
+      <h4>الدورات</h4>
+      <a href="courses.html#basic">المرحلة الأساسية</a>
+      <a href="courses.html#secondary">المرحلة الثانوية</a>
+      <a href="courses.html#university">المرحلة الجامعية</a>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <a href="teacher.html">المعلمون</a>
+      <a href="dossiers.html">دوسيات</a>
+      <a href="summaries.html">ملخصات</a>
+      <a href="worksheets.html">أوراق عمل</a>
+      <a href="past-exams.html">امتحانات سابقة</a>
+      <a href="suggestions.html">أسئلة مقترحة</a>
+      <a href="e-exams.html">اختبارات إلكترونية</a>
+    </div>
+    <div>
+      <h4>الموقع</h4>
+      <a class="btn loc" target="_blank" rel="noopener"
+         href="https://www.google.com/maps?q=32.5342972,35.8473561&z=17&hl=en">📍 إربد - الأردن (الموقع)</a>
+      <div class="meta" style="margin-top:6px">هاتف: <a href="tel:+962790245645">+962 7 9024 5645</a></div>
+    </div>
+  </div>
+  <div class="copy" style="text-align:center">
+    <div style="font-weight:800;font-size:15px;margin:6px 0">
+      <a href="https://wa.me/962790986908" target="_blank" rel="noopener"
+         style="color:#ffd76a;text-decoration:underline">Develped by Mohamad Khaled Al-Shlool</a>
+    </div>
+    <div style="opacity:.9">© kanz_el3lm</div>
+  </div>
+</footer>
+<!-- END :: Unified Footer v2 -->
+<!-- END :: Unified Footer v2 -->
+
+  <!-- سكربت تبديل المراحل (الافتراضي الثانوية) -->
+  <script>
+    (function(){
+      const buttons = document.querySelectorAll('.stage-btn');
+      const panels  = document.querySelectorAll('.stage-panel');
+      function show(id){
+        buttons.forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+        panels.forEach(p=>p.classList.toggle('active', p.id===id));
+      }
+      buttons.forEach(b=> b.addEventListener('click', ()=> show(b.dataset.target)));
+      // الافتراضي: الثانوية
+      show('stage-secondary');
+    })();
+  </script>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,98 @@
+﻿:root{
+  --gold:#d4af37; --gold-2:#b68d1a; --ink:#0c1324; --muted:#5f6b85;
+  --bg:#f7f8fb; --card:#ffffff; --line:#e7e9f2; --link:#2d6bff;
+}
+*{box-sizing:border-box} html[dir='rtl'] body{direction:rtl}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Tajawal',Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:15px}
+a{color:#1844c6;text-decoration:none}
+.container{max-width:1200px;margin:auto;padding:0 18px}
+.section{padding:34px 0}
+.nav.gold .topbar{background:var(--ink);color:#fff;font-size:12px}
+.topbar .container{display:flex;justify-content:space-between;gap:10px;padding:6px 0}
+.topbar .mini{color:#fff;opacity:.85;margin-inline-start:10px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:90}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:42px;height:42px;object-fit:cover;border-radius:8px}
+.logo .brand strong{display:block}
+.links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.links a{padding:8px 10px;border-radius:10px}
+.links a:hover{background:#f0f3fe}
+.links .cta{background:linear-gradient(180deg,var(--gold),var(--gold-2));color:#000;border-radius:999px;padding:9px 14px}
+.dropdown{position:relative}
+.dropbtn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.dropmenu{position:absolute;inset-inline-start:0;top:110%;background:#fff;border:1px solid var(--line);border-radius:12px;min-width:220px;padding:8px;display:none;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.dropdown:hover .dropmenu{display:block}
+.dropmenu a{display:block;padding:8px;border-radius:8px;color:#0c1324}
+.dropmenu a:hover{background:#f2f5ff}
+.hero{position:relative;background:#fff;border-bottom:1px solid var(--line)}
+.hero .container{display:grid;grid-template-columns:1.4fr .6fr;gap:20px;align-items:center;padding:24px 0}
+@media(max-width:900px){.hero .container{grid-template-columns:1fr}}
+.title{font-weight:800;font-size:32px}
+.subtitle{color:var(--muted);margin-top:6px}
+.badges{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.btn.primary{background:linear-gradient(180deg,var(--gold),var(--gold-2));border:none}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.kpi .num{font-size:22px;font-weight:800;color:#000}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card .thumb{height:160px;background:#f2f3f8;border-bottom:1px solid var(--line)}
+.card .body{padding:12px}
+.meta{color:var(--muted);font-size:13px}
+.filters{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}
+@media(max-width:900px){.filters{grid-template-columns:repeat(2,1fr)}}
+.select{background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px}
+.list .row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed var(--line);padding:10px 0}
+.toast{position:fixed;bottom:16px;inset-inline:16px;background:#0e214a;color:#fff;border:1px solid #203c82;padding:12px;border-radius:12px;display:none;z-index:99}
+.toast.show{display:block}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:99}
+.modal-backdrop.open{display:flex}
+.modal{background:#fff;border:1px solid var(--line);border-radius:14px;width:96vw;max-width:1200px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap}
+.modal-actions .btn{padding:6px 10px;border-radius:10px}
+.modal-body{padding:0;height:calc(92vh - 56px)} .viewer-frame{position:relative;width:100%;height:100%}
+.viewer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#0b1120}
+.section h2{margin:0 0 8px}
+.footer{background:#0c1324;color:#cfd6ea;margin-top:24px;border-top:4px solid var(--gold)}
+.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px;padding:20px 0}
+@media(max-width:900px){.footgrid{grid-template-columns:1fr 1fr}}
+.footer a{color:#e8edff;display:block;margin:4px 0}
+.fbrand{display:flex;gap:10px;align-items:center}
+.fbrand img{width:40px;height:40px;border-radius:8px;object-fit:cover}
+.copy{border-top:1px solid #273252;padding:10px 0;text-align:center;font-size:12px;color:#9fb0d7}
+.fade-in{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+.fade-in.in{opacity:1;transform:none}
+.lift{transition:transform .2s ease,box-shadow .2s ease}
+.lift:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+/* === Dropdown fix === */
+.nav .dropdown{ position:relative }
+.nav .dropbtn{
+  background:#fff; border:1px solid var(--line); border-radius:10px;
+  padding:8px 12px; cursor:pointer
+}
+.nav .dropmenu{
+  position:absolute; inset-inline-start:0; top:100%; /* لا فجوة */
+  background:#fff; border:1px solid var(--line); border-radius:12px;
+  min-width:220px; padding:8px; display:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.08); z-index:9999
+}
+.nav .dropdown:hover > .dropmenu,
+.nav .dropdown:focus-within > .dropmenu,
+.nav .dropdown.open > .dropmenu{ display:block }
+.nav .dropmenu a{ display:block; padding:8px; border-radius:8px; color:#0c1324 }
+.nav .dropmenu a:hover{ background:#f2f5ff }
+
+/* === Social buttons colors (assertive) === */
+.btn.fb{ background:#1877F2 !important; color:#fff !important; border:none }
+.btn.yt{ background:#FF0000 !important; color:#fff !important; border:none }
+.btn.wa{ background:#25D366 !important; color:#000 !important; border:none }
+.btn.loc{
+  background:linear-gradient(180deg,#d4af37,#b68d1a) !important; color:#000 !important; border:none
+}
+
+/* === Sticky footer on short pages === */
+html,body{ height:100% }
+body{ min-height:100vh; display:flex; flex-direction:column }
+.footer{ margin-top:auto }   /* يدفع الفوتر لأسفل عندما لا يوجد محتوى */
